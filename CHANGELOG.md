@@ -13,6 +13,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 <!-- markdownlint-disable-next-line -->
 <!-- ### Changed -->
 
+- `betterglobekey`: bump version
+
 <!-- markdownlint-disable-next-line -->
 <!-- ### Deprecated -->
 
