@@ -20,7 +20,7 @@
   <br>
   <br>
   <a href="https://github.com/Serpentiel/homebrew-tools">
-    <img src="https://github.com/Serpentiel/homebrew-tools/blob/repo-assets/README.md/logo.png" alt="Logo" width="192" height="256">
+    <img src="https://github.com/Serpentiel/homebrew-tools/blob/repo-assets/README.md/logo.png" alt="Logo" width="256" height="256">
   </a>
   <h3>homebrew-tools</h3>
   <p>Custom Tools for Enhanced Productivity</p>
@@ -125,8 +125,8 @@ vulnerabilities or serious issues.
 
 ## License
 
-Distributed under the MIT License. See [`LICENSE.md`](https://github.com/Serpentiel/homebrew-tools/blob/main/LICENSE.md) for
-more information.
+Distributed under the MIT License. See [`LICENSE.md`](https://github.com/Serpentiel/homebrew-tools/blob/main/LICENSE.md)
+for more information.
 
 > **N.B.** This project explicitly does not requires its contributors to sign a _Contributor License Agreement_ nor does
 > it posses one.
