@@ -1,8 +1,8 @@
 class Betterglobekey < Formula
   desc "Make macOS Globe key great again!"
-  version "latest"
+  version "v3.0.0"
   homepage "https://github.com/Serpentiel/betterglobekey"
-  url "https://github.com/Serpentiel/betterglobekey.git", tag: "v2.1.1"
+  url "https://github.com/Serpentiel/betterglobekey.git", tag: "v3.0.0"
   license "MIT"
   head "https://github.com/Serpentiel/betterglobekey.git", branch: "main"
 
