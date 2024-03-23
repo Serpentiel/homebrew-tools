@@ -11,9 +11,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 <!-- ### Added -->
 
 <!-- markdownlint-disable-next-line -->
-<!-- ### Changed -->
+
+### Changed
 
 - `betterglobekey`: bump version
+- Switch to trunk.io for linting purposes
 
 <!-- markdownlint-disable-next-line -->
 <!-- ### Deprecated -->
@@ -22,6 +24,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 <!-- ### Removed -->
 
 <!-- markdownlint-disable-next-line -->
+
 ### Fixed
 
 - Logo size in `README.md`
@@ -32,6 +35,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [1.0.0] - 2024-01-21
 
 <!-- markdownlint-disable-next-line -->
+
 ### Added
 
 - The template
@@ -39,5 +43,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - `betterglobekey` formula
 
 <!-- VERSION DIFFLINKS -->
+
 [Unreleased]: https://github.com/Serpentiel/homebrew-tools/compare/v1.0.0...main
 [1.0.0]: https://github.com/Serpentiel/homebrew-tools/releases/tag/v1.0.0
