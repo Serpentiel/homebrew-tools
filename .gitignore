@@ -1,0 +1,2 @@
+# Tracked despite the global gitignore: the pinned toolchain travels with the repo
+!mise.toml
