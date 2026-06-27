@@ -82,7 +82,7 @@ project and show your appreciation, which we would also be very happy about:
 ## Code of Conduct
 
 This project and everyone participating in it is governed by
-our [Code of Conduct](https://github.com/Serpentiel/homebrew-tools/blob/master/CODE_OF_CONDUCT.md). By participating,
+our [Code of Conduct](https://github.com/Serpentiel/homebrew-tools/blob/main/CODE_OF_CONDUCT.md). By participating,
 you are expected to uphold this code. Please report unacceptable behavior via any contact method available to you.
 
 <!-- markdownlint-disable -->
@@ -144,7 +144,7 @@ following steps in advance to help us fix any potential bug as fast as possible.
 
 > **N.B.** You must never report security related issues, vulnerabilities or bugs including sensitive information to the
 > issue tracker, or elsewhere in public. Instead sensitive bugs must be reported according to
-> our [security policy](https://github.com/Serpentiel/homebrew-tools/blob/main/SECURITY.mdZ).
+> our [security policy](https://github.com/Serpentiel/homebrew-tools/blob/main/SECURITY.md).
 
 We use GitHub Issues to track bugs and errors. If you run into an issue with the project:
 
@@ -215,8 +215,12 @@ documented.
 
 ## Styleguides
 
-This project does not possess any specific styleguides. Please, make sure to follow general best practices used in Go
-community.
+This project does not possess any specific styleguides. Please, make sure to follow the general best practices used in
+the Homebrew community.
+
+You can use the following resources for the reference:
+
+- [Homebrew Formula Cookbook](https://docs.brew.sh/Formula-Cookbook)
 
 ### Commit Messages
 

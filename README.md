@@ -36,7 +36,7 @@
 </div>
 <details>
   <summary>Table of Contents</summary>
-  <ol>
+  <ul>
     <li>
       <a href="#about-the-project">1. About the Project</a>
     </li>
@@ -60,7 +60,7 @@
     <li>
       <a href="#license">5. License</a>
     </li>
-  </ol>
+  </ul>
 </details>
 <!-- markdownlint-restore -->
 
@@ -128,8 +128,8 @@ vulnerabilities or serious issues.
 Distributed under the MIT License. See [`LICENSE.md`](https://github.com/Serpentiel/homebrew-tools/blob/main/LICENSE.md)
 for more information.
 
-> **N.B.** This project explicitly does not requires its contributors to sign a _Contributor License Agreement_ nor does
-> it posses one.
+> **N.B.** This project explicitly does not require its contributors to sign a _Contributor License Agreement_ nor does
+> it possess one.
 
 <!-- markdownlint-disable -->
 <p align="right"><a href="#top">(back to top)</a></p>
