@@ -1,37 +1,33 @@
 class Betterglobekey < Formula
-  desc "Make macOS Globe key great again!"
-  version "v3.0.0"
+  desc "Reworked Globe key for faster input source switching"
   homepage "https://github.com/Serpentiel/betterglobekey"
-  url "https://github.com/Serpentiel/betterglobekey.git", tag: "v3.0.0"
+  url "https://github.com/Serpentiel/betterglobekey/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "3d9411ab2af221c39764165d3d623ade2ca3e814bacea86b7ec24817baf67c40"
   license "MIT"
   head "https://github.com/Serpentiel/betterglobekey.git", branch: "main"
 
-  depends_on "go"
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
+  depends_on "go" => :build
+  depends_on :macos
 
   def install
-    system "go", "build", "-o", "#{bin}/betterglobekey", "./main.go"
-
-    output = Utils.safe_popen_read("#{bin}/betterglobekey", "completion", "bash")
-    (bash_completion/"betterglobekey").write output
-
-    output = Utils.safe_popen_read("#{bin}/betterglobekey", "completion", "zsh")
-    (zsh_completion/"_betterglobekey").write output
-
-    output = Utils.safe_popen_read("#{bin}/betterglobekey", "completion", "fish")
-    (fish_completion/"betterglobekey.fish").write output
+    system "go", "build", *std_go_args(ldflags: "-s -w")
+    generate_completions_from_executable(bin/"betterglobekey", "completion")
   end
 
   service do
-    run "#{bin}/betterglobekey"
+    run opt_bin/"betterglobekey"
     keep_alive true
+    log_path var/"log/betterglobekey.log"
+    error_log_path var/"log/betterglobekey.log"
   end
 
   test do
-    str_default = shell_output("#{bin}/betterglobekey")
-    str_help = shell_output("#{bin}/betterglobekey --help")
-    assert_equal str_default, str_help
-
-    assert_match "Usage:", str_help
-    assert_match "Available Commands:", str_help
+    assert_match "Available Commands:", shell_output("#{bin}/betterglobekey --help")
+    assert_match "#compdef betterglobekey", shell_output("#{bin}/betterglobekey completion zsh")
   end
 end
