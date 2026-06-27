@@ -1,0 +1,2 @@
+kind: Added
+body: "Add Task (Taskfile.dev) as the entry point for development workflows, route CI through it, and pin the toolchain in mise.toml."
