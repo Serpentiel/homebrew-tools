@@ -32,6 +32,7 @@ lint:
         - .github/**
         - CHANGELOG.md
         - LICENSE.md
+        - .changes/**
 actions:
   disabled:
     - trunk-announce
