@@ -16,6 +16,17 @@ tasks:
     cmds:
       - trunk fmt {{.CLI_ARGS}}
 
+  style:
+    desc: Check formula and cask style with brew
+    cmds:
+      - |
+        files=$(git ls-files 'Formula/*.rb' 'Casks/*.rb')
+        if [ -n "$files" ]; then
+          brew style $files
+        else
+          echo "no formulae or casks to check"
+        fi
+
   changelog:new:
     desc: Add a new changelog fragment
     cmds:
