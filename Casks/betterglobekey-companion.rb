@@ -4,7 +4,7 @@ cask "betterglobekey-companion" do
 
   url "https://github.com/Serpentiel/betterglobekey/releases/download/v#{version}/betterglobekey-companion-#{version}-universal.zip",
       verified: "github.com/Serpentiel/betterglobekey/"
-  name "betterglobekey companion"
+  name "betterglobekey-companion"
   desc "Graphical configuration editor for betterglobekey"
   homepage "https://github.com/Serpentiel/betterglobekey"
 
