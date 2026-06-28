@@ -11,6 +11,11 @@ tasks:
     cmds:
       - trunk check {{.CLI_ARGS}}
 
+  bump:
+    desc: Open PRs bumping the formula and cask to a release version (expects VERSION)
+    cmds:
+      - ./scripts/bump.sh "$VERSION"
+
   fmt:
     desc: Format the repository via trunk
     cmds:

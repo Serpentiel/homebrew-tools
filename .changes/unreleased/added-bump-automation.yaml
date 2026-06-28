@@ -1,0 +1,2 @@
+kind: Added
+body: Add a release-triggered workflow that opens formula and cask bump pull requests automatically.
