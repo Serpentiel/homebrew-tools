@@ -67,3 +67,10 @@ jobs:
           go install github.com/go-task/task/v3/cmd/task@v3.51.1
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
       - run: task style
+      - name: Tap the checkout
+        run: |
+          tap_dir="$(brew --repository)/Library/Taps/serpentiel/homebrew-tools"
+          rm -rf "$tap_dir"
+          mkdir -p "$(dirname "$tap_dir")"
+          ln -s "$GITHUB_WORKSPACE" "$tap_dir"
+      - run: task audit

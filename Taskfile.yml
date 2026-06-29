@@ -32,6 +32,17 @@ tasks:
           echo "no formulae or casks to check"
         fi
 
+  audit:
+    desc: Audit the formula and cask with brew (the tap must resolve to this checkout)
+    cmds:
+      - |
+        tokens=$(git ls-files 'Formula/*.rb' 'Casks/*.rb' | sed -E 's#.*/(.+)\.rb$#serpentiel/tools/\1#')
+        if [ -n "$tokens" ]; then
+          brew audit --strict $tokens
+        else
+          echo "no formulae or casks to audit"
+        fi
+
   changelog:new:
     desc: Add a new changelog fragment
     cmds:
