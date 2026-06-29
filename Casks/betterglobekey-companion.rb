@@ -1,9 +1,9 @@
 cask "betterglobekey-companion" do
   version "4.0.0"
-  sha256 "REPLACE_WITH_COMPANION_ZIP_SHA256"
+  # Placeholder checksum; the release bump automation fills in the real value.
+  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
 
-  url "https://github.com/Serpentiel/betterglobekey/releases/download/v#{version}/betterglobekey-companion-#{version}-universal.zip",
-      verified: "github.com/Serpentiel/betterglobekey/"
+  url "https://github.com/Serpentiel/betterglobekey/releases/download/v#{version}/betterglobekey-companion-#{version}-universal.zip"
   name "betterglobekey-companion"
   desc "Graphical configuration editor for betterglobekey"
   homepage "https://github.com/Serpentiel/betterglobekey"
@@ -30,5 +30,9 @@ cask "betterglobekey-companion" do
     The companion edits the running betterglobekey service's configuration, so
     start the service first:
       brew services start betterglobekey
+
+    The app is not notarized. If Gatekeeper blocks the first launch, clear the
+    quarantine attribute and reopen it:
+      xattr -dr com.apple.quarantine /Applications/betterglobekey-companion.app
   EOS
 end
