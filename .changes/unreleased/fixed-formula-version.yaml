@@ -1,2 +1,0 @@
-kind: Fixed
-body: Build the betterglobekey formula with its version stamped, so the daemon reports the released version instead of dev.
