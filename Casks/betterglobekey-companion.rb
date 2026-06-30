@@ -1,7 +1,7 @@
 cask "betterglobekey-companion" do
   version "4.0.0"
   # Placeholder checksum; the release bump automation fills in the real value.
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "137c6e43ace784377965c583a4e24efecbd3e4ecf2ecfe3d3aebd2b412583df9"
 
   url "https://github.com/Serpentiel/betterglobekey/releases/download/v#{version}/betterglobekey-companion-#{version}-universal.zip"
   name "betterglobekey-companion"
