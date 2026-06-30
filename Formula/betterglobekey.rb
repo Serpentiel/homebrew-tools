@@ -15,7 +15,7 @@ class Betterglobekey < Formula
   depends_on :macos
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
     generate_completions_from_executable(bin/"betterglobekey", "completion")
   end
 
