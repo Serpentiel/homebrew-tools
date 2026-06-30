@@ -11,6 +11,11 @@ tasks:
     cmds:
       - trunk check {{.CLI_ARGS}}
 
+  bump:
+    desc: Open PRs bumping the formula and cask to a release version (expects VERSION)
+    cmds:
+      - ./scripts/bump.sh "$VERSION"
+
   fmt:
     desc: Format the repository via trunk
     cmds:
@@ -25,6 +30,17 @@ tasks:
           brew style $files
         else
           echo "no formulae or casks to check"
+        fi
+
+  audit:
+    desc: Audit the formula and cask with brew (the tap must resolve to this checkout)
+    cmds:
+      - |
+        tokens=$(git ls-files 'Formula/*.rb' 'Casks/*.rb' | sed -E 's#.*/(.+)\.rb$#serpentiel/tools/\1#')
+        if [ -n "$tokens" ]; then
+          brew audit --strict $tokens
+        else
+          echo "no formulae or casks to audit"
         fi
 
   changelog:new:

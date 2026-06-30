@@ -1,0 +1,48 @@
+name: Bump
+
+# checkov:skip=CKV_GHA_7:the release version input is required to drive the bump
+on:
+  repository_dispatch:
+    types:
+      - betterglobekey-release
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version, without leading v (e.g. 4.0.0)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bump
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    environment: bump
+    steps:
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1
+        id: app-token
+        with:
+          client-id: ${{ vars.BETTERGLOBEKEY_RELEASE_BOT_CLIENT_ID }}
+          private-key: ${{ secrets.BETTERGLOBEKEY_RELEASE_BOT_PRIVATE_KEY }}
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        with:
+          go-version: stable
+      - name: Install task
+        run: |
+          go install github.com/go-task/task/v3/cmd/task@v3.51.1
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+      - name: Open bump pull requests
+        env:
+          VERSION: ${{ github.event.inputs.version || github.event.client_payload.version }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
+        run: task bump
