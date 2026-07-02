@@ -1,8 +1,8 @@
 class Betterglobekey < Formula
   desc "Reworked Globe key for faster input source switching"
   homepage "https://github.com/Serpentiel/betterglobekey"
-  url "https://github.com/Serpentiel/betterglobekey/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "af3fc1f9ef7aa63f626aa0a992d6e3f77bee8404c77330949795c5fa8ae4a714"
+  url "https://github.com/Serpentiel/betterglobekey/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "7afa2128bbd2fb2a7c33f4a9b6c2ddfe26a370017d9eb8a0dee904c49f7e915d"
   license "MIT"
   head "https://github.com/Serpentiel/betterglobekey.git", branch: "main"
 
