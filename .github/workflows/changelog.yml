@@ -22,11 +22,14 @@ jobs:
   changelog:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Automated release-bump PRs (branch prefixed `bump-`, opened by the release
+    # bot) only edit the formula/cask version and need no changelog entry.
     if: >
       !contains(github.event.pull_request.labels.*.name, 'skip workflows') &&
       !contains(github.event.pull_request.labels.*.name, 'no changelog') &&
       !contains(github.event.pull_request.labels.*.name, 'trunk') &&
-      github.actor != 'dependabot[bot]'
+      github.actor != 'dependabot[bot]' &&
+      !startsWith(github.head_ref, 'bump-')
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
         with:
