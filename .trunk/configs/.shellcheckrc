@@ -1,0 +1,12 @@
+# shellcheck configuration.
+#
+# The default ruleset catches real bugs (unquoted expansions, misused tests,
+# unset variables, and the like). The optional, pedantic style checks that
+# `enable=all` turns on — e.g. SC2250 (brace every reference) and SC2292 (prefer
+# [[ ]] over [ ]) — are intentionally left off to match this repository's
+# existing shell style.
+source-path=SCRIPTDIR
+
+# If shellcheck cannot follow a sourced file, silence the follow errors via:
+# disable=SC1090
+# disable=SC1091

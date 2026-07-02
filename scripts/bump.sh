@@ -19,7 +19,7 @@ version="${1:?usage: bump.sh <version>}"
 tag="v${version}"
 branch_base="main"
 base="origin/${branch_base}"
-dry_run="${DRY_RUN:-}"
+dry_run="${DRY_RUN-}"
 
 configure_identity() {
 	[ -n "$dry_run" ] && return 0
@@ -44,6 +44,9 @@ sha256_of() {
 # passed via the environment so URLs and digests need no shell/sed escaping.
 replace_field() {
 	local file="$1" field="$2" value="$3"
+	# The single-quoted argument is a Ruby program (ruby -pe), not shell: the $_,
+	# $1, $2, and #{...} are Ruby syntax, so single quotes are intentional here.
+	# shellcheck disable=SC2016
 	BUMP_FIELD="$field" BUMP_VALUE="$value" ruby -i -pe \
 		'$_.sub!(/^(\s*#{Regexp.escape(ENV.fetch("BUMP_FIELD"))} ")[^"]*(")/) { "#{$1}#{ENV.fetch("BUMP_VALUE")}#{$2}" }' \
 		"$file"
