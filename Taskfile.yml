@@ -43,6 +43,12 @@ tasks:
           echo "no formulae or casks to audit"
         fi
 
+  verify:
+    desc: The full CI mirror — style and audit
+    cmds:
+      - task: style
+      - task: audit
+
   changelog:new:
     desc: Add a new changelog fragment
     cmds:

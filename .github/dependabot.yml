@@ -6,3 +6,10 @@ updates:
       interval: weekly
     cooldown:
       default-days: 14
+    # Minor and patch bumps arrive as one reviewable PR; majors stay
+    # standalone so one breaking dependency cannot poison the batch.
+    groups:
+      actions-minor-and-patch:
+        applies-to: version-updates
+        update-types: [minor, patch]
+        patterns: ["*"]
