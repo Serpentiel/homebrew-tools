@@ -33,14 +33,7 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
       - run: git fetch -f -t
-      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
-        with:
-          go-version: stable
-      - name: Install changie and task
-        run: |
-          go install github.com/miniscruff/changie@v1.24.2
-          go install github.com/go-task/task/v3/cmd/task@v3.51.1
-          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+      - uses: jdx/mise-action@7e36c90d9ab29c415a2384db3006f3ec8a8cc654
       - id: release
         env:
           TAG_INPUT: ${{ inputs.tag }}

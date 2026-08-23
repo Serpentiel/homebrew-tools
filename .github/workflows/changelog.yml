@@ -35,13 +35,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
-        with:
-          go-version: stable
-      - name: Install task
-        run: |
-          go install github.com/go-task/task/v3/cmd/task@v3.51.1
-          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+      - uses: jdx/mise-action@7e36c90d9ab29c415a2384db3006f3ec8a8cc654
       - name: Require a changie fragment
         env:
           BASE_REF: ${{ github.base_ref }}
