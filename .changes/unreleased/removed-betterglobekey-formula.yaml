@@ -1,0 +1,2 @@
+kind: Removed
+body: Drop the `betterglobekey` formula — it now lives in `homebrew/core`. `tap_migrations.json` moves existing tap installations over on `brew update`, so no tap is needed for `brew install betterglobekey`.

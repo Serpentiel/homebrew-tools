@@ -14,7 +14,7 @@ cask "betterglobekey-companion" do
     strategy :github_latest
   end
 
-  depends_on formula: "serpentiel/tools/betterglobekey"
+  depends_on formula: "betterglobekey"
   depends_on macos: :big_sur
 
   app "betterglobekey-companion.app"

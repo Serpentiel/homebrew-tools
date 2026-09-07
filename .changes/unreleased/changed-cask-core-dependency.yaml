@@ -1,0 +1,2 @@
+kind: Changed
+body: Point the `betterglobekey-companion` cask at the `homebrew/core` `betterglobekey` formula instead of the tap-qualified one.

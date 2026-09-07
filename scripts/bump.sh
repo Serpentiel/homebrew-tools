@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 #
-# Opens pull requests bumping the formula and cask to a released version.
+# Opens a pull request bumping the cask to a released version.
 #
-# It downloads the published artifacts, computes their checksums, and edits the
-# formula/cask in place — so it works with a GitHub App token (no fork needed,
-# unlike `brew bump-*-pr`). Each target gets its own branch and PR off `main`,
-# so nothing on `main` is touched until a PR is reviewed and merged.
+# The betterglobekey formula lives in homebrew/core, which autobumps it from its
+# livecheck, so only the cask is bumped here.
+#
+# It downloads the published artifact, computes its checksum, and edits the cask
+# in place — so it works with a GitHub App token (no fork needed, unlike
+# `brew bump-*-pr`). The bump gets its own branch and PR off `main`, so nothing
+# on `main` is touched until the PR is reviewed and merged.
 #
 # Usage: scripts/bump.sh <version>          # e.g. 4.0.0 (no leading v)
 #
@@ -88,13 +91,6 @@ submit() {
 
 git fetch -q origin "$branch_base"
 configure_identity
-
-formula_url="https://github.com/Serpentiel/betterglobekey/archive/refs/tags/${tag}.tar.gz"
-submit "bump-betterglobekey-${version}" \
-	"chore(formula): bump betterglobekey to ${version}" \
-	"Formula/betterglobekey.rb" \
-	url "$formula_url" \
-	sha256 "$(sha256_of "$formula_url")"
 
 cask_url="https://github.com/Serpentiel/betterglobekey/releases/download/${tag}/betterglobekey-companion-${version}-universal.zip"
 submit "bump-betterglobekey-companion-${version}" \

@@ -66,9 +66,12 @@
 
 ## About the Project
 
-`homebrew-tools` is a personal repository of Homebrew formulas, offering a range of tools developed to enhance
-productivity and ease of use on macOS. The first tool in this collection is `betterglobekey`, an enhancement over the
-standard Globe key, allowing for faster input method switching.
+`homebrew-tools` is a personal repository of Homebrew formulae and casks, offering a range of tools developed to
+enhance productivity and ease of use on macOS.
+
+The tap ships `betterglobekey-companion`, the graphical configuration editor for
+[`betterglobekey`](https://github.com/Serpentiel/betterglobekey) — a rework of the macOS Globe key for faster input
+source switching. `betterglobekey` itself lives in `homebrew/core` and no longer needs this tap.
 
 <!-- markdownlint-disable -->
 <p align="right"><a href="#top">(back to top)</a></p>
@@ -83,17 +86,19 @@ standard Globe key, allowing for faster input method switching.
 
 ### Installation
 
-To use `betterglobekey`, you first need to tap into the `homebrew-tools` repository:
-
-```bash
-brew tap Serpentiel/tools
-```
-
-Then, you can install `betterglobekey` using:
+`betterglobekey` comes from `homebrew/core` — no tap required:
 
 ```bash
 brew install betterglobekey
 ```
+
+The companion is a cask from this tap, and pulls in the `betterglobekey` formula:
+
+```bash
+brew install --cask serpentiel/tools/betterglobekey-companion
+```
+
+> **N.B.** Existing tap installations of `betterglobekey` migrate to `homebrew/core` automatically on `brew update`.
 
 <!-- markdownlint-disable -->
 <p align="right"><a href="#top">(back to top)</a></p>
@@ -101,8 +106,9 @@ brew install betterglobekey
 
 ## Usage
 
-After installation, `betterglobekey` can be configured via Terminal. For more details on configuration and usage, refer
-to the documentation inside the tool's formula.
+Configure `betterglobekey` from the terminal, or through the companion app. The configuration format and every option
+are covered in the
+[`betterglobekey` documentation](https://github.com/Serpentiel/betterglobekey/blob/main/docs/README.md).
 
 <!-- markdownlint-disable -->
 <p align="right"><a href="#top">(back to top)</a></p>
