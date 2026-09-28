@@ -1,0 +1,2 @@
+kind: Changed
+body: "`betterglobekey-companion` requires macOS 13 Ventura or later, following its move from Electron to Tauri. `zap` also removes the Tauri app's WebKit and cache data."

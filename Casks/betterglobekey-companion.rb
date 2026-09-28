@@ -15,14 +15,17 @@ cask "betterglobekey-companion" do
   end
 
   depends_on formula: "betterglobekey"
-  depends_on macos: :big_sur
+  depends_on macos: :ventura
 
   app "betterglobekey-companion.app"
 
   zap trash: [
     "~/Library/Application Support/betterglobekey-companion",
+    "~/Library/Application Support/com.serpentiel.betterglobekey.companion",
+    "~/Library/Caches/com.serpentiel.betterglobekey.companion",
     "~/Library/Preferences/com.serpentiel.betterglobekey.companion.plist",
     "~/Library/Saved Application State/com.serpentiel.betterglobekey.companion.savedState",
+    "~/Library/WebKit/com.serpentiel.betterglobekey.companion",
   ]
 
   caveats <<~EOS
