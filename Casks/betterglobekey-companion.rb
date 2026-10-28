@@ -1,6 +1,6 @@
 cask "betterglobekey-companion" do
-  version "4.3.0"
-  sha256 "2c85ef92c6037bcefe1da16591bcde8c718a207286a3b015bacabad5c74a4ebc"
+  version "4.3.1"
+  sha256 "86403815ba1b9787f9ac41f70f9bf5181c50bec0e256be0125e82040da4e7378"
 
   url "https://github.com/Serpentiel/betterglobekey/releases/download/v#{version}/betterglobekey-companion-#{version}-universal.zip"
   name "betterglobekey-companion"
