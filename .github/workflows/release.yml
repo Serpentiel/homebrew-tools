@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Mint release-bot token
         id: app-token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510
         with:
           client-id: ${{ vars.BETTERGLOBEKEY_RELEASE_BOT_CLIENT_ID }}
           private-key: ${{ secrets.BETTERGLOBEKEY_RELEASE_BOT_PRIVATE_KEY }}
@@ -33,7 +33,7 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
       - run: git fetch -f -t
-      - uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca
+      - uses: jdx/mise-action@9b200bcecbfd6303e69a4a261b2e09e3757440a7
       - id: release
         env:
           TAG_INPUT: ${{ inputs.tag }}
